@@ -9,7 +9,7 @@ import './index.scss'
 const Home = () => {
   const [letterClass, setLetterClass] = useState('text-animate')
 
-  const nameArray = ['l', 'o', 'b', 'o', 'd', 'a', 'n']
+  const nameArray = ['h', 'k', 'u', 'r', 'e', 'n', 'k', 'o']
   const jobArray = [
     'w',
     'e',
@@ -26,12 +26,14 @@ const Home = () => {
     'r',
     '.',
   ]
-
-  useEffect(() => {
-    return setTimeout(() => {
-      setLetterClass('text-animate-hover')
-    }, 4000)
-  }, [])
+  useEffect (() =>{
+    const timeoutId = setTimeout(() => {
+      setLetterClass('new-class');
+    }, 2000);
+    return () => {
+      clearTimeout(timeoutId);
+  };
+}, [])
 
   return (
     <>
@@ -59,7 +61,7 @@ const Home = () => {
               idx={22}
             />
           </h1>
-          <h2>Front End Developer / JavaScript Expert / Youtuber</h2>
+          <h2>Front End Developer / JavaScript / React </h2>
           <Link to="/contact" className="flat-button">
             CONTACT ME
           </Link>
